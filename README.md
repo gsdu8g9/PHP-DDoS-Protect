@@ -5,6 +5,6 @@ Simple DDoS Protect for PHP &amp; Apache
 
 1- Upload all files your FTP Server.
 
-2- Enter this code on all pages
+2- Enter this code on all pages.
 
   - "include("global.php");"
