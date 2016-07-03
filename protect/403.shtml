@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Access Denied</title>
+<meta name="description" content="Slow down, access denied."/>
+<meta name="keywords" content="slow,down,access,denied"/>
+<meta name="author" content="Creative Apps"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?",
+    function (data) {
+            $("#userinf").append("Hello, your ip address (<span style='color: lightblue'>" + data["geoplugin_request"] + ")</span>");
+			$("#userinf").append(" and your address (<span style='color: lightblue'>" + data["geoplugin_countryName"] + "/" + data["geoplugin_countryCode"] + "</span>");
+			$("#userinf").append("<span style='color: lightblue'>/" + data["geoplugin_region"] + ")</span>" + ' were reported.<br/><br/>');
+			$("#userinf").append("<center><span id='cooldown' style='color: red'></span></center>");
+    }
+	);
+	var second = 5;
+		$.geriyeSay = function(){
+			if (second > 1){
+				second--;
+				$("#cooldown").text("standby time of " + second + " seconds for the re-entry");
+			} else {
+				window.location.href = "/";
+			}
+		}
+	$("#cooldown").text("standby time of " + second + " seconds for the re-entry");
+	setInterval("$.geriyeSay()", 1000);
+});
+</script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+body {
+	font-family: 'Titillium Web',serif;
+	background: #101010;
+	color: #e8e8e8;
+}
+</style>
+</head>
+<body>
+<img style="position: absolute; margin: auto; left: 0; right: 0; top: 25px; border:1px #2f2f2f solid; height: 200px;" src="https://tribzap2it.files.wordpress.com/2014/01/adventuretime-dance.gif?w=392&h=214" />
+<div id="userinf" style="padding: 10px; position: absolute; margin: auto; left: 0; right: 0; top: 260px; height: 200px; width: 400px;"></div>
+</body>
+</html>
