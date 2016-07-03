@@ -1,0 +1,2 @@
+ErrorDocument 403 /protect/403.shtml
+Deny from all
