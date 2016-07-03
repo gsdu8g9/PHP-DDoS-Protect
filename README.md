@@ -11,5 +11,6 @@ Simple DDoS Protect for PHP &amp; Apache
 
 -Customization-
 
-  - Change the folder's name (Protect)
-  - Open .htaccess and replace "ErrorDocument 403 /protect/403.shtml" to "ErrorDocument 403 /customdirectory/403.shtml"
+  - Change the folder's name. (Protect)
+  - Open .htaccess and replace "ErrorDocument 403 /protect/403.shtml" to "ErrorDocument 403 /customdirectory/403.shtml".
+  - Open 403.shtml and edit. (optional)
