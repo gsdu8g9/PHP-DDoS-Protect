@@ -11,6 +11,7 @@ Simple DDoS Protect for PHP &amp; Apache
 
 -Customization-
 
+  - Open global.php and replace "if($_SESSION['last_session_request'] > time() - 2){" to "if($_SESSION['last_session_request'] > time() - second){".
   - Change the folder's name. (Protect)
   - Open .htaccess and replace "ErrorDocument 403 /protect/403.shtml" to "ErrorDocument 403 /customdirectory/403.shtml".
   - Open 403.shtml and edit. (optional)
